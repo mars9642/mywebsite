@@ -1,0 +1,124 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 20px;
+    background-color: #6c0eff;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow: hidden;
+    background-image: url('/background.png');
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+header {
+    background: #e0ccff;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+h1, p, a, button {
+    margin-bottom: 10px;
+}
+
+#box {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #aaa;
+    margin-top: 20px;
+}
+
+button {
+    background: #e0ccff;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer {
+    font-size: 14px;
+    color: white;
+    background-color: #e0ccff;
+    padding: 20px;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 834px) {
+    body {
+        font-size: 18px;
+    }
+    header, footer {
+        padding: 8px;
+    }
+    #box {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 16px;
+    }
+    header, footer {
+        font-size: 0.9rem;
+    }
+    #box {
+        height: 200px;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    #box {
+        height: 250px;
+    }
+}
+
+div {
+    background-color: rgba(180,150,255,.75);
+    margin: 18px auto 0 auto;
+    padding: 10px 20px;
+    width: 95%;
+
+    max-width: 95%;
+    box-sizing: border-box;
+}
+
+hr {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#title {
+    text-align: center;
+    display: block;
+    width: fit-content;
+    color: #e0ccff;
+    padding: 10px 20px;
+}
+
+#links {
+    text-align: center;
+    display: block;
+    width: fit-content;
+    color: #e0ccff;
+    padding: 10px 20px;
+}
