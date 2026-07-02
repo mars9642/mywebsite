@@ -1,42 +1,79 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <title>minesweeper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="author" content="Sylhare">
+    <meta name="description" content="Basic Minesweeper game in Javascript">
+    <meta name="link" content="https://github.com/Sylhare/Minesweeper">
+
+    <title> MineSweeper</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <script defer="true" language="javascript" type="text/javascript" src="js/Sketch.js"></script>
+    <script language="javascript" type="text/javascript" src="js/Zone.js"></script>
+    <script language="javascript" type="text/javascript" src="js/Board.js"></script>
+    <script language="javascript" type="text/javascript" src="js/Explosion.js"></script>
+    <script language="javascript" type="text/javascript" src="js/Timer.js"></script>
+
 </head>
+
 <body>
-<header>
-    <strong>mars86.dev</strong>
-</header>
 
-<main>
-    <div id='title'>
-        <h1>minesweeper</h1>
+    <div id="page">
+        <div id="logo">
+            <h1 class="title">Minesweeper</h1>
+        </div>
+
+        <!-- navigation panel -->
+        <div id="nav">
+            <div class="nav-left">
+                <div id="game-info">
+                    <img id="mine-img" alt="mine" src="img/mine.svg">
+                    <!-- <span id="mines" class="info">8</span> -->
+                </div>
+
+                <div class="timer">
+                    <p>Time</p>
+                    <timer id="timer">00:00</timer>
+                </div>
+            </div>
+
+            <ul>
+                <li><a class="button" href="./index.html">Game</a></li>
+                <li><a class="button" href="./pages/settings.html">Settings</a></li>
+                <li><a class="button" href="pages/info.html"> Info </a></li>
+            </ul>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- Minesweeper game  -->
+        <div id="container">
+
+
+            <!-- Custom Alert -->
+            <div id="alertContainer">
+                <div id="alertBox" class="center">
+                    <!--<h1 id="customAlert-title" class="">Alert</h1>-->
+                    <img id="alert-img" src="" alt="alert" class="alertBox-img">
+                    <p id="customAlert-content">message</p>
+                    <a class="button" href="#" onclick="removeAlert()">Ok</a>
+                </div>
+            </div>
+
+            <!-- Game canvas -->
+            <div id="game"></div>
+
+        </div>
+        <div id="footer">
+            <p>
+                Webpage made by <a href="https://github.com/Sylhare" target="_blank">sylhare    all i did was copy files, but minesweeper is minesweeper</a>
+            </p>
+        </div>
     </div>
-
-    <div id='links'>
-        <a>main page</a><a> | </a><a href='https://mars96.neocities.org'>neocities</a><br>
-    </div>
-
-    <br><hr>
-
-    <div>
-
-        <div id="app"></div>
-        <script type="module" src="/src/main.js"></script>
-
-        <br><br>
-
-        credits to <a href="https://github.com/hugeBlack/threejsMinesweeper">HugeBlack's minesweeper</a> ! <br>
-        this is copied from him, not a single bit of the script is mine <br>
-
-    </div>
-</main>
-<footer>
-    <span style="float: right; font-size: 10px;">This code is under the 'you can use my code but credit me or we are mortal enemies' license. dont brek it plz dud :(</span>
-</footer>
 </body>
+
 </html>
