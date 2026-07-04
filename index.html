@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/png" href="/favicon.png">
 </head>
+<script>
+    const API_URL = "https://mars86.dev/counterapi"; // TODO: your Pi's real address
+
+    function ordinalSuffix(n) {
+        const lastTwo = n % 100;
+        const lastOne = n % 10;
+
+        if (lastTwo >= 11 && lastTwo <= 13) {
+            return n + "th";
+        }
+        if (lastOne === 1) return n + "st";
+        if (lastOne === 2) return n + "nd";
+        if (lastOne === 3) return n + "rd";
+        return n + "th";
+    }
+
+    async function incrementCount() {
+        const response = await fetch(API_URL + "/count", { method: "POST" });
+        const data = await response.json();
+        document.getElementById("visitor-counter").textContent = ordinalSuffix(data.count);
+    }
+
+    incrementCount();
+</script>
 <body>
 <header>
     <strong>mars86.dev</strong>
@@ -28,7 +52,20 @@
         <p>
             hi! i am mars86, i am a developer. well i say that, but im not <i>that</i> good at developing. <br>
             my main language is kotlin, and i am also confident with python, html, and css. <br>
-            most of this site is copied from my neocities and i couldnt be bothered to change it so dont be annoyed its not any different! <br>
+            the css and my template is copied from my neocities and i couldnt be bothered to change it so dont be annoyed nothing looks different! <br>
+            my username variates between mars86, mars96, mars9642, and mars8642, and maybe some others. dont ask why i just do that <br>
+            this should be obvious, but any links to external sites are not made by me and i dont have anything to do with them. except mars96.neocities.org, but links to external sites on that are also not mine.
+            <br>
+        </p>
+        <br><hr><br>
+        <h1>about site</h1><br>
+        <p>
+            site finally started working on 02/07/26 <br>
+            this entire site, yes all of it, is running on a raspberry pi zero 2 W running alpine linux <br>
+            blinkies are from <a href="https://blinkies.cafe">blinkies.cafe</a> (some might not be btw), they are cool go look at their site <br>
+            the <a href="https://github.com/mars9642/mywebsite">source code</a> is hosted on github if you want it, its just so i can easily update the site <br>
+            this site was made on <a href="https://jetbrains.com/webstorm/">jetbrains webstorm IDE</a>, and any other backends or anything were made with their respective jetbrains ide. <a href="https://jetbrains.com">jetbrains</a> forever <br>
+            you are the <span id="visitor-counter">(loading...)</span> visitor! (not unique, and if its still loading api is down, tell me this plz)
             <br>
         </p>
         <br>
@@ -36,6 +73,7 @@
 </main>
 <footer>
     <span style="float: right; font-size: 10px;">This code is under the 'you can use my code but credit me or we are mortal enemies' license. dont brek it plz dud :(</span>
+    <span style="float: left;"><a href="https://alpinelinux.org"><img src="blinkies/alpinelinux.gif"></a></span></a>
 </footer>
 </body>
 </html>
