@@ -1,3 +1,3 @@
 # mywebsite
 for mars86.dev
-(path-or-url-to-image.png)
+!(path-or-url-to-image.png)
