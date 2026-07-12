@@ -1,3 +1,3 @@
 # mywebsite
 for mars86.dev
-!(images/kelsigma.gif)
+![kelsigma](images/kelsigma.gif)
