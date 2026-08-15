@@ -18,7 +18,7 @@
     </div>
 
     <div id='links'>
-        <a>main page</a><a> | </a><a href='https://mars96.neocities.org'>neocities</a><a> | </a><a href='https://mars86.dev/minesweeper'>minesweeper</a><br>
+        <a>main page</a><a> | </a><a href='https://mars86.dev/blog/'>blog</a><a> | </a><a href='https://mars86.dev/minesweeper'>minesweeper</a><br>
     </div>
 
     <br><hr>
@@ -29,7 +29,10 @@
             hi! i am mars86, i am a developer. well i say that, but im not <i>that</i> good at developing. <br>
             my main language is kotlin, and i am also confident with python, html, and css. <br>
             the css and my template is copied from my neocities and i couldnt be bothered to change it so dont be annoyed nothing looks different! <br>
-            this should be obvious, but any links to external sites are not made by me and i dont have anything to do with them. except mars96.neocities.org, but links to external sites on that are also not mine.
+            this should be obvious, but any links to external sites are not made by me and i dont have anything to do with them. except mars96.neocities.org, but links to external sites on that are also not mine. <br>
+            my fav music artists/bands are: green day, jamie paige, flavor foley, lemon demon, astrid and femtanyl <br>
+            my fav games are: class of 09, bugsnax, yeeps, bonelab, project sekai, beat saber, omori, and osu!mania (only mania, i suck at all other modes) <br>
+            im one of the people that like all genres of music, but NOT country music, it sucks <br>
             <br>
         </p>
         <br><hr><br>
@@ -40,7 +43,8 @@
             blinkies are from <a href="https://blinkies.cafe">blinkies.cafe</a> (some might not be btw), they are cool go look at their site <br>
             the <a href="https://github.com/mars9642/mywebsite">source code</a> is hosted on github if you want it, its just so i can easily update the site <br>
             this site was made on <a href="https://jetbrains.com/webstorm/">jetbrains webstorm IDE</a>, and any other backends or anything were made with their respective jetbrains ide. <a href="https://jetbrains.com">jetbrains</a> forever <br>
-            you are the <span id="visitor-counter">(loading...)</span> visitor! (not unique, and if its still loading api is down, tell me this plz)
+            you are the <span id="visitor-counter">(loading...)</span> visitor! (not unique, and if its still loading api is down, tell me this plz) <br>
+            last updated 15/07/26 <br>
             <br>
         </p>
         <br><br>
@@ -50,15 +54,19 @@
 
     <div>
         <h1>thingymabobs</h1><br>
+        <!--
         <p>
             <iframe width="314" height="321" scrolling="no" src="https://gify.pet/pet/pet.html?name=ƎNA&dob=1783861686&gender=m&element=Water&pet=https%3A%2F%2Fmars86.dev%2Fimages%2Fenagifypet.png&map=https%3A%2F%2Fmars86.dev%2Fimages%2Fenagifypetmap.png&background=1995.png&tablecolor=%23ff486e&textcolor=%23bb344f" frameborder="0"></iframe><br>
             <iframe src="https://www.ballix.net/whatsplaying/widget?user=mars9642" width="300" height="200" style="overflow: hidden; border: none;"></iframe><br>
+            <iframe id="musicctrl" src="/musiccontroller.html" width="300" height="100" scrolling="no" frameborder="0" style="border: 2px solid #cba6f7;"></iframe>
         </p>
+        -->
         <h2>buttons and webrings and links and all of that stuff</h2>
         <div id='gfdkris'>
             <script type="text/javascript" src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"></script>
             <script type="text/javascript" src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"></script>
         </div><br>
+        <iframe src="https://discord.com/widget?id=1537978169343213651&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         <object id="melonland-surf-club" data="https://melonland.net/surf-badge.svg?fill=#fe6262" type="image/svg+xml" style="width: 100px; height: 100px;"></object>
         <br>
     </div>
@@ -67,29 +75,6 @@
     <span style="float: right; font-size: 10px;">This code is under the 'you can use my code but credit me or we are mortal enemies' license. dont brek it plz dud :(</span>
     <span style="float: left;"><a href="https://alpinelinux.org"><img src="images/blinkies/alpinelinux.gif" alt="powered by alpine linux"></a></span>
 </footer>
-<script>
-    const API_URL = "https://mars86.dev/counterapi";
-
-    function ordinalSuffix(n) {
-        const lastTwo = n % 100;
-        const lastOne = n % 10;
-
-        if (lastTwo >= 11 && lastTwo <= 13) {
-            return n + "th";
-        }
-        if (lastOne === 1) return n + "st";
-        if (lastOne === 2) return n + "nd";
-        if (lastOne === 3) return n + "rd";
-        return n + "th";
-    }
-
-    async function incrementCount() {
-        const response = await fetch(API_URL + "/count", { method: "POST" });
-        const data = await response.json();
-        document.getElementById("visitor-counter").textContent = ordinalSuffix(data.count);
-    }
-
-    incrementCount();
-</script>
+<script src="/fetchapi.js"></script>
 </body>
 </html>
